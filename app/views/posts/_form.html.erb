@@ -1,0 +1,53 @@
+<div class="col-xl-4 col-md-6 col-sm-8 col-10 mx-auto my-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white text-center">
+      <h5>Create Post</h5>
+    </div>
+    <div class="card-body">
+      <%= form_with(model: post, local: true, class: "needs-validation") do |form| %>
+        <% if post.errors.any? %>
+          <div class="alert alert-danger">
+            <h6>There were errors with your submission:</h6>
+            <ul class="mb-0">
+              <% post.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <!-- Hidden User ID Field -->
+        <%= form.text_field :user_id, type: "hidden", value: current_user.id %>
+
+        <!-- Title Field -->
+        <div class="mb-3">
+          <%= form.label :title, class: "form-label" %>
+          <%= form.text_field :title, class: "form-control", placeholder: "Enter a title" %>
+        </div>
+
+        <!-- Description Field -->
+        <div class="mb-3">
+          <%= form.label :description, class: "form-label" %>
+          <%= form.text_area :description, class: "form-control", rows: 3, placeholder: "Write a description" %>
+        </div>
+
+        <!-- Keywords Field -->
+        <div class="mb-3">
+          <%= form.label :keywords, class: "form-label" %>
+          <%= form.text_field :keywords, class: "form-control", placeholder: "Add some keywords" %>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="mb-3">
+          <%= form.label :images, class: "form-label" %>
+          <%= form.file_field :images, multiple: true, class: "form-control" %>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid">
+          <%= form.submit "Submit", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

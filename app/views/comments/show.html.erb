@@ -1,0 +1,44 @@
+<%= render @post %>
+
+<%= link_to "Back to posts", posts_path %>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @post.user.id %>
+    <div>
+      <%= link_to "Edit this post", edit_post_path(@post) %> |
+      <%= button_to "Destroy this post", @post, method: :delete %>
+    </div>
+  <% end %>
+<% end %>
+
+<h3>Comments</h3>
+
+<%= render 'comments/form', comment: @comment %>
+
+<% @post.comments.each do |comment| %>
+  <div class="comment-container d-flex align-items-start mb-3">
+    <!-- Comment avatar and user details -->
+    <div class="comment-avatar me-3">
+      <% if comment.user.present? && comment.user.avatar.attached? %>
+        <%= image_tag comment.user.avatar, class: "rounded-circle", style: "width: 50px; height: 50px; object-fit: cover;" %>
+      <% else %>
+        <%= image_tag "default_avatar.png", class: "rounded-circle", style: "width: 50px; height: 50px; object-fit: cover;" %>
+      <% end %>
+    </div>
+
+    <!-- Comment details -->
+    <div class="comment-body">
+      <p class="mb-1">
+        <strong><%= link_to comment.user.username, user_path(comment.user), class: "text-dark" %></strong>
+      </p>
+      <p class="text-muted mb-2">
+        <%= comment.created_at.strftime("%B %d, %Y %H:%M") %>
+      </p>
+      <p class="comment-text">
+        <%= comment.text %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+

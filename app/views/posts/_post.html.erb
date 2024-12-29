@@ -1,0 +1,51 @@
+<div id="<%= dom_id(post) %>" class="post-container">
+  <!-- Post Link sadece başlığa tıklanabilir olacak -->
+  <%= link_to post_path(post), class: "post-link-wrapper" do %> 
+    <div class="post-header">
+      <h2><%= post.title %></h2>
+      <p class="post-meta"><%= post.keywords %></p>
+    </div>
+  <% end %> <!-- Post Link End -->
+
+  <div class="post-body">
+    <p class="post-description"><%= post.description %></p>
+    <% post.images.each do |image| %>
+      <div class="post-image">
+        <%= image_tag(image, style: "object-fit: cover; width: 100%; height: auto; max-height: 300px;") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="post-footer">
+    <!-- Profil fotoğrafı ve kullanıcı bilgisi burada yer alacak, link dışı -->
+    <div class="user-info">
+      <%= image_tag(post.user.avatar.attached? ? post.user.avatar : 'default_avatar.png', class: "rounded-circle", style: "width: 40px; height: 40px; object-fit: cover;") %>
+      <p class="post-user">
+        Posted by <%= link_to post.user.username, post.user, class: "user-link" %>
+      </p>
+    </div>
+
+    <div class="post-actions">
+      <% if user_signed_in? && post.likes.exists?(user_id: current_user.id) %>
+        <%= button_to unlike_path(post), method: :delete, class: "like-button unlike" do %>
+          <i class="fa fa-heart-broken"></i> Unlike
+        <% end %>
+      <% elsif user_signed_in? %>
+        <%= button_to likes_path, params: { like: { post_id: post.id } }, method: :post, class: "like-button like" do %>
+          <i class="fa fa-heart"></i> Like
+        <% end %>
+      <% else %>
+        <p class="signin-notice">You need to sign in to like posts.</p>
+      <% end %>
+    </div>
+
+    <p class="like-count"><%= post.likes.count %> Likes</p>
+  </div>
+</div>
+
+
+
+
+
+
+

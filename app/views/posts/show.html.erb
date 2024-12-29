@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post %>
+<%= link_to "Back to posts", posts_path %>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @post.user.id %>
+    <div>
+      <%= link_to "Edit this post", edit_post_path(@post) %> |
+      <%= button_to "Destroy this post", @post, method: :delete %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- Yorum formunu render et -->
+<%= render 'comments/form', comment: @comment %>
+
+<!-- Yorumları kullanıcı adı ve avatar ile birlikte render et -->
+<div class="comments-section">
+  <% @post.comments.each do |comment| %>
+    <%= render partial: "comments/comment", locals: { comment: comment } %>
+  <% end %>
+</div>
+
+

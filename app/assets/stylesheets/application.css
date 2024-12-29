@@ -1,0 +1,536 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* CSS dosyanızın sonuna ekleyin */
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e74c3c; /* Kırmızı renk */
+    font-size: 24px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .like-button:hover {
+    transform: scale(1.2); /* Hover efekti */
+  }
+  
+  .like-button i {
+    pointer-events: none; /* İkon tıklamasını engelle */
+  }
+  
+  .like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e74c3c; /* Kırmızı renk */
+    font-size: 24px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .like-button i.fa-heart-broken {
+    color: #95a5a6; /* Gri renk */
+  }
+  
+  .like-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .like-button i {
+    pointer-events: none;
+  }
+  .footer {
+    background-color: #f8f9fa;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #0056b3; /* Hover'da mavi */
+  }
+  
+  .footer .text-dark:hover {
+    text-decoration: underline;
+  }
+  .navbar {
+    background-color: #f8f9fa !important; /* Açık gri renk */
+  }
+  
+  .nav-link {
+    color: #6c757d !important; /* Hafif koyu gri */
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #0056b3 !important; /* Hover'da mavi renk */
+  }
+  
+  .text-danger {
+    color: #dc3545 !important; /* Çıkış linki için kırmızı */
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  /* Footer Background Color and Gradient */
+.footer {
+    background: linear-gradient(135deg, #6f42c1, #00bcd4);
+    color: white;
+  }
+  
+  /* Social Media Icons Customization */
+  .social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+    color: #f1f1f1;
+  }
+  
+  /* Footer Links */
+  footer a.text-decoration-none {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  footer a.text-decoration-none:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Footer Container Padding */
+  footer .container {
+    max-width: 1200px;
+  }
+  
+  /* Quick Links Section Title */
+  footer .fw-bold {
+    font-size: 1.2rem;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .footer {
+      text-align: center;
+    }
+    .row {
+      text-align: center;
+    }
+  }
+/* Social Media Icons Customization */
+.social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: white; /* Default white color */
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+    color: #f1f1f1; /* Light color on hover */
+  }
+  
+  /* Footer Links */
+  footer a.text-decoration-none {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  footer a.text-decoration-none:hover {
+    color: #f1f1f1;
+  }
+    /* Modern Navbar Styling */
+.navbar {
+    background-color: #2b4055; /* Koyu mavi tonları */
+    border-bottom: 3px solid #0f64cd; /* Altına ince bir mavi çizgi */
+  }
+  
+  .navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+  }
+  
+  .navbar .navbar-brand:hover {
+    color: #3498db;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #1e91ae;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #3498db; /* Mavi tonunda hover efekti */
+    text-decoration: underline;
+  }
+  
+  .navbar-nav .nav-item.active .nav-link {
+    color: #3498db; /* Aktif link rengi */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #3498db; /* Mobil menüdeki simgeyi mavi yap */
+  }
+  
+  /* Kullanıcı Avatarı ve Hoşgeldiniz Mesajı */
+  .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .d-flex.align-items-center span {
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    font-weight: 500;
+  }
+  
+  /* Avatar */
+  .rounded-circle {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid #ecf0f1; /* Avatarın etrafında beyaz bir çerçeve */
+  }
+  
+  /* Sign Out Button */
+  .navbar-nav .nav-link.text-danger {
+    color: #e74c3c;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link.text-danger:hover {
+    color: #c0392b;
+  }
+  
+  /* Mobil ve Masaüstü Uyumluluğu */
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      text-align: center;
+    }
+  
+    .navbar-nav .nav-item {
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Genel Stil Ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* About Sayfasının Genel Container'ı */
+  .about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Header Kısmı */
+  .about-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .about-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .about-header .lead-text {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* İçerik Kısmı */
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #34495e;
+  }
+  
+  /* Özellikler Kısmı */
+  .features h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 15px;
+  }
+  
+  .features ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .features li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: #34495e;
+  }
+  
+  .features li strong {
+    color: #2c3e50;
+  }
+  
+  /* CTA (Call to Action) */
+  .cta {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    padding: 20px 0;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Tasarım */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 30px;
+    }
+  
+    .about-header h1 {
+      font-size: 2rem;
+    }
+  
+    .about-header .lead-text {
+      font-size: 1rem;
+    }
+  
+    .features h3 {
+      font-size: 1.5rem;
+    }
+  
+    .features li {
+      font-size: 1rem;
+    }
+  
+    .cta {
+      font-size: 1rem;
+    }
+  }
+  
+
+
+
+
+  
+/* Post Container: Tüm post alanını kapsayacak şekilde düzenliyoruz */
+.post-container {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Post Link Wrapper: Tüm postu kapsayacak şekilde boyutlandırılıyor */
+  .post-link-wrapper {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Post Header ve İçerikleri: Başlık ve içerikler, link altına alınarak tam tıklanabilir hale getirilir */
+  .post-header {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .post-header .post-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .post-meta {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .post-body {
+    padding: 20px;
+  }
+  
+  .post-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .post-image {
+    max-height: 300px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  /* Post Footer: Like ve sosyal medya alanı düzeni */
+  .post-footer {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+  }
+  
+  .like-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .like-button i {
+    font-size: 1.2rem;
+  }
+  
+  .like-count {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  /* Hover Effect for Post */
+  .post-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sign-in Prompt */
+  .signin-notice {
+    font-size: 0.875rem;
+    color: #dc3545;
+  }
+  
+  /* Avatar Boyutu Düzenleme */
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .author-username {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+/* Post Link Tıklanabilirliği İçin */
+.post-link-wrapper {
+    display: block; /* Link'i blok seviyesinde yapıyoruz */
+    position: relative;
+    z-index: 1; /* Link'in üstte olmasını sağlıyoruz */
+  }
+  
+  .post-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Eğer link'lerin üzerine başka bir öğe geliyorsa */
+  .post-link-wrapper {
+    pointer-events: auto; /* Tıklanabilirliği etkinleştiriyoruz */
+  }
+/* Post Link Wrapper */
+.post-link-wrapper {
+    display: block;
+    position: relative;
+    z-index: 10; /* Link'in üstte olmasını sağlıyoruz */
+    color: inherit; /* Link'in rengini devralması için */
+  }
+  
+  /* Post Container */
+  .post-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Başka öğeler linkin önüne geçmesin diye */
+  .post-container .post-link-wrapper {
+    pointer-events: auto;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .post-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .post-meta {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .post-description {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+      

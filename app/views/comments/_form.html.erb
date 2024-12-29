@@ -1,0 +1,27 @@
+<%= form_with(model: comment, local: true, class: "needs-validation") do |form| %>
+  <% if comment.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h4>
+      <ul>
+        <% comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :text, "Comment", class: "form-label" %>
+    <%= form.text_area :text, class: "form-control", rows: 5, placeholder: "Write your comment here..." %>
+  </div>
+
+  <!-- user_id'yi current_user.id ile doldurun -->
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <!-- post_id'yi @post.id ile doldurun -->
+  <%= form.hidden_field :post_id, value: @post.id %>
+
+  <div class="text-end">
+    <%= form.submit "Post Comment", class: "btn btn-primary" %>
+  </div>
+<% end %>
